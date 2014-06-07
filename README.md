@@ -1,22 +1,22 @@
 Tether for iOS and Android
 ==========================
-Internet connection sharing for iPhone, iPad, and Android.  Share your phones internet connection with other devices including your PC or Mac.  This is a simplified, cross-platform implementation of wi-fi tethering web proxy for sharing internet connections from your iOS or Android devices.
+Internet connection sharing for iPhone, iPad, and Android.  Share your phones internet connection with other devices including your PC or Mac.  This is a simplified, cross-platform implementation of a wi-fi tethering web proxy for sharing internet connections from your iOS or Android devices.
 
 
 Overview
 --------
-The core of this project is written in pure C native code.  It runs on both Android via ndk-build and iOS as a result.  It is intended as a useful project to familiarise oneself with cross platform socket programming.  The project code currently supports GET requests over the proxy port 8080 with full HTTP headers.  It also allows HTTPS from the client browser.  It handles multiple requests simultaneously and does so quickly via multithreading (via unix forks).  
+The core of this project is written in pure C native code.  It runs on both Android via ndk-build and iOS as a result.  It is intended as a useful project to familiarise oneself with cross platform socket programming.  The project code currently supports GET requests over the proxy port 8080 with full HTTP headers.  It also allows HTTPS from the client browser.  It handles multiple requests simultaneously and does so quickly via multithreading (via Unix forks).  
 
 The intention is to release this to our Open Source community to improve the code base and additionally extend the core cross-platform socket code to be more comprehensive and to eventually add support for Windows phones and tablets using a this unified core networking codebase written in native C for all mobile platforms that support C (in Android's case via JNI and the NDK).
 
 It follows the standard network socket usage steps,
 
-1. socket() - The socket() function returns a socket file descriptor called sockfd
-2. bind() - Attempt to bind to the port we passed into getaddrinfo()
-3. listen() - Listen on the specified port for incoming connections
-4. accept() - Accept the incoming connection
-5. read/recv & write/send loop - Read and write the data coming through the connection
-6. close() - Close the connection
+1. **socket()** - The socket() function returns a socket file descriptor called sockfd
+2. **bind()** - Attempt to bind to the port we passed into getaddrinfo()
+3. **listen()** - Listen on the specified port for incoming connections
+4. **accept()** - Accept the incoming connection
+5. **read/recv & write/send loop** - Read and write the data coming through the connection
+6. **close()** - Close the connection
 
 
 Usage on OS X
@@ -24,7 +24,7 @@ Usage on OS X
 
 Since C native code is used, the proxy code can initially be built, run and tested from an OS X command line to more easily view the workings of the server and client of the proxy via printf().  With a little work it can be run on Windows as well. 
 
-This core code can be run from the command line for easier testing on OS X or Linux.  For the core cross-platform code used for both iOS and Android, please see the proxy.c file (located in the tether-android sub-project with the path of /tether/tether-android/jni/) to run the program using main() instead of proxy().  This includes the basic steps,
+This core code can be run from the command line for easier testing on OS X or Linux.  For the core cross-platform code used for both iOS and Android, please see the proxy.c file (located in the `tether-android` sub-project with the path of `/tether/tether-android/jni/`) to run the program using `main()` instead of `proxy()`.  This includes the basic steps,
 
 Compile using:
 	
@@ -84,7 +84,7 @@ To switch the same code back for use as C library code for inclusion in an Andro
 	int proxy(int start) {
 		char *proxy_port = PORT; 
 
-That's it!  You have a simple way to rapidly use, or develop and test the teher proxy code from your OS X or Linux command line and revert it back for use a native C library that you can include in your Android or iOS apps.
+That's it!  You have a simple way to rapidly use, or develop and test the tether proxy code from your OS X or Linux command line and revert it back for use as a native C library that you can include in your Android or iOS apps.
 
 
 ###To compile and run for OS X/Linux use:
