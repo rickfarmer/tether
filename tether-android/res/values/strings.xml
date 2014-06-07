@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tether</string>
+    <string name="proxy_on">Proxy On</string>
+    <string name="proxy_off">Proxy Start</string>
+    <string name="proxy_ip">\n\nThe proxy runs on port 8080\n\n\n\nNote: The button animation may not complete once clicked, but the proxy is running in the background.</string>
+</resources>
